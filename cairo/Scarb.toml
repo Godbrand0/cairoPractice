@@ -7,7 +7,9 @@ edition = "2023_11"
 starknet = "2.4.0"
 
 [[target.starknet-contract]]
+build-external-contract-artifacts = ["sierra", "casm"]
 sierra = true
 casm = true
+
 
 [tool.snforge]

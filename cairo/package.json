@@ -1,0 +1,23 @@
+{
+  "name": "user-registry-deployment",
+  "version": "1.0.0",
+
+  "scripts": {
+    "build": "scarb build",
+    "deploy": "node deploy.js",
+    "build-and-deploy": "scarb build && node deploy.js",
+    "check-deployment": "node deployment-check.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "starknet": "^5.24.3"
+  },
+  "description": "",
+  "main": "deploy.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
