@@ -2,11 +2,11 @@
   {
     "type": "impl",
     "name": "UserRegistryImpl",
-    "interface_name": "cairo::contract::UserRegistry::IUserRegistry"
+    "interface_name": "my_starknet_project::contract::UserRegistry::IUserRegistry"
   },
   {
     "type": "struct",
-    "name": "cairo::contract::UserRegistry::User",
+    "name": "my_starknet_project::contract::UserRegistry::User",
     "members": [
       {
         "name": "name",
@@ -38,7 +38,7 @@
   },
   {
     "type": "interface",
-    "name": "cairo::contract::UserRegistry::IUserRegistry",
+    "name": "my_starknet_project::contract::UserRegistry::IUserRegistry",
     "items": [
       {
         "type": "function",
@@ -62,7 +62,7 @@
         "inputs": [],
         "outputs": [
           {
-            "type": "cairo::contract::UserRegistry::User"
+            "type": "my_starknet_project::contract::UserRegistry::User"
           }
         ],
         "state_mutability": "view"
@@ -89,7 +89,7 @@
         ],
         "outputs": [
           {
-            "type": "cairo::contract::UserRegistry::User"
+            "type": "my_starknet_project::contract::UserRegistry::User"
           }
         ],
         "state_mutability": "view"
@@ -119,7 +119,7 @@
   },
   {
     "type": "event",
-    "name": "cairo::contract::UserRegistry::Event",
+    "name": "my_starknet_project::contract::UserRegistry::Event",
     "kind": "enum",
     "variants": []
   }

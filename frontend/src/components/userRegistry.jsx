@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useUserRegistry } from '../hooks/useContract';
 import { waitForTransaction, getWalletAccount, isWalletConnected, executeTransaction } from '../utils/starknet';
+import { shortString } from "starknet";
 
 const UserRegistry = ({ wallet, onAccountCreated }) => {
   const [formData, setFormData] = useState({
@@ -69,14 +70,16 @@ const UserRegistry = ({ wallet, onAccountCreated }) => {
       }
 
       // Direct contract interaction - REPLACE WITH YOUR CONTRACT ADDRESS
-      const CONTRACT_ADDRESS = "0x06a4a3988dec2621eb61a20ba0869098fc93bf6e2ffad4cbb7b56c536d220524";
+      const CONTRACT_ADDRESS = "0x075938a164b38e637d3e5ed07f138872ca423a2150ca1927edb7a81e93d425d5";
       
       console.log('Calling executeTransaction directly...');
-      const result = await executeTransaction(
-        CONTRACT_ADDRESS,
-        'create_account', // or whatever your function name is
-        [formData.name.trim(), age] // adjust calldata format as needed
-      );
+     const encodedName = shortString.encodeShortString(formData.name.trim());
+
+const result = await executeTransaction(
+  CONTRACT_ADDRESS,
+  "create_account",
+  [encodedName, age] // ✅ correct: felt + u8
+);
       
       setTransactionHash(result.transaction_hash);
 
